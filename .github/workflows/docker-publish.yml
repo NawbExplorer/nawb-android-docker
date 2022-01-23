@@ -2,10 +2,11 @@ name: Nawb Android Docker Image
 
 on:
   push:
-    branches: [ main ]
-    tags: [ 'v*.*.*' ]
+    tags: 
+      - 'v*.*.*' 
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
 
 env:
   REGISTRY: docker.io
@@ -15,10 +16,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
 
     steps:
       - name: Checkout repository
